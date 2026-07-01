@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Written Exam · Units 7 & 8 · Be good! / My style</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1E293B;--muted:#64748B;--border:#CBD5E1;--card:#fff;
+  --u7:#16A34A;--u7l:#DCFCE7;--u7d:#14532D;--u7b:#86EFAC;
+  --u8:#2563EB;--u8l:#DBEAFE;--u8d:#1E40AF;--u8b:#93C5FD;
+  --purple:#7C3AED;--purple-l:#EDE9FE;--purple-d:#5B21B6;
+  --amber:#D97706;--amber-l:#FEF3C7;--amber-d:#92400E;
+  --pink:#DB2777;--pink-l:#FCE7F3;--pink-d:#9D174D;
+  --red:#DC2626;--red-l:#FEE2E2;
+  --green:#059669;--green-l:#D1FAE5;--green-d:#065F46;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Nunito',sans-serif;background:#F8FAFC;color:var(--ink);}
+
+/* COVER */
+.cover{background:linear-gradient(135deg,#0F172A 0%,#1E3A5F 40%,#14532D 100%);padding:44px 28px 48px;position:relative;overflow:hidden;}
+.cover::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 60%,rgba(22,163,74,.25) 0%,transparent 50%),radial-gradient(circle at 75% 30%,rgba(37,99,235,.25) 0%,transparent 50%);}
+.cover-inner{max-width:880px;margin:0 auto;position:relative;}
+.cover-badges{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:8px;}
+.badge{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:20px;}
+.badge-school{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);}
+.badge-exam{background:#FCD34D;color:#92400E;}
+.cover h1{font-family:'Fredoka One',cursive;font-size:clamp(26px,5vw,50px);color:#fff;line-height:1.05;margin-bottom:6px;}
+.cover h1 .u7{color:#86EFAC;}.cover h1 .u8{color:#93C5FD;}
+.cover-sub{color:rgba(255,255,255,.65);font-size:13px;font-weight:700;margin-bottom:22px;}
+.unit-pills{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;}
+.upill{padding:6px 16px;border-radius:20px;font-size:12px;font-weight:800;border:1.5px solid;}
+.upill-7{background:rgba(22,163,74,.15);border-color:#86EFAC;color:#86EFAC;}
+.upill-8{background:rgba(37,99,235,.15);border-color:#93C5FD;color:#93C5FD;}
+.student-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;}
+.sfield{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:10px 14px;}
+.sfield label{display:block;font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:4px;}
+.sfield input{background:transparent;border:none;border-bottom:1.5px solid rgba(255,255,255,.3);width:100%;color:white;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;outline:none;padding:2px 0;}
+.sfield input::placeholder{color:rgba(255,255,255,.3);}
+.score-box{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:10px 16px;text-align:center;}
+.score-box label{display:block;font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:2px;}
+.score-num{font-family:'Fredoka One',cursive;font-size:30px;line-height:1;}
+.score-num span{font-size:13px;font-weight:700;color:rgba(255,255,255,.4);}
+
+/* STICKY BAR */
+.bar{background:white;border-bottom:2px solid var(--border);padding:9px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;position:sticky;top:0;z-index:40;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+.bar-chip{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:800;color:var(--muted);}
+.bar-chip span{font-size:15px;}
+.prog-wrap{flex:1;min-width:130px;display:flex;align-items:center;gap:8px;}
+.prog-track{flex:1;height:7px;background:#E2E8F0;border-radius:4px;overflow:hidden;}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--u7),var(--u8));border-radius:4px;transition:width .4s;}
+.prog-pts{font-size:12px;font-weight:900;color:var(--u7d);white-space:nowrap;}
+
+/* PAGE */
+.page{max-width:880px;margin:0 auto;padding:24px 14px 60px;}
+.print-btn{display:flex;align-items:center;gap:7px;padding:9px 20px;border-radius:10px;border:none;background:linear-gradient(135deg,var(--u7),#22C55E);color:white;font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;cursor:pointer;margin:16px auto 4px;transition:all .2s;}
+.print-btn:hover{transform:translateY(-2px);box-shadow:0 5px 16px rgba(22,163,74,.35);}
+
+/* UNIT DIVIDERS */
+.unit-div{border-radius:16px;padding:16px 22px;margin:30px 0 20px;display:flex;align-items:center;gap:16px;}
+.unit-div.u7{background:linear-gradient(135deg,#052E16,#14532D);color:white;}
+.unit-div.u8{background:linear-gradient(135deg,#1E3A5F,#1E40AF);color:white;}
+.unit-num{font-family:'Fredoka One',cursive;font-size:52px;line-height:1;opacity:.4;}
+.unit-info h2{font-family:'Fredoka One',cursive;font-size:22px;}
+.unit-info p{font-size:12px;opacity:.7;font-weight:700;margin-top:3px;}
+.unit-pts{margin-left:auto;text-align:right;}
+.unit-pts strong{font-family:'Fredoka One',cursive;font-size:26px;display:block;}
+.unit-pts span{font-size:10px;font-weight:800;opacity:.6;text-transform:uppercase;letter-spacing:1px;}
+
+/* SECTION DIV */
+.sec-div{display:flex;align-items:center;gap:12px;margin:24px 0 14px;}
+.sec-num{font-family:'Fredoka One',cursive;font-size:30px;line-height:1;flex-shrink:0;}
+.sec-info h3{font-size:16px;font-weight:900;line-height:1.1;}
+.sec-info p{font-size:12px;color:var(--muted);font-weight:600;margin-top:2px;}
+.sec-pts{margin-left:auto;text-align:right;flex-shrink:0;}
+.sec-pts strong{font-family:'Fredoka One',cursive;font-size:20px;display:block;}
+.sec-pts span{font-size:10px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1px;}
+
+/* EXERCISE CARDS */
+.ex{background:var(--card);border-radius:14px;margin-bottom:18px;overflow:hidden;border:1.5px solid var(--border);box-shadow:0 2px 10px rgba(0,0,0,.04);}
+.ex-hd{display:flex;align-items:center;gap:9px;padding:12px 18px;border-bottom:1.5px solid var(--border);}
+.ex-letter{width:28px;height:28px;border-radius:7px;color:white;font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ex-hd h4{font-size:13px;font-weight:800;flex:1;line-height:1.3;}
+.ex-pts{font-size:10px;font-weight:800;padding:2px 9px;border-radius:20px;background:#F1F5F9;color:var(--muted);}
+.ex-body{padding:18px 20px;}
+.inst{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:14px;padding:9px 13px;background:#F8FAFC;border-radius:7px;border-left:3px solid #BBF7D0;line-height:1.6;}
+
+/* INPUTS */
+.b{min-width:90px;border:none;border-bottom:2.5px solid var(--u7);padding:2px 7px;background:var(--u7l);border-radius:5px 5px 0 0;font-family:'Nunito',sans-serif;font-size:12px;font-weight:700;color:var(--u7d);outline:none;transition:all .15s;}
+.b:focus{border-color:var(--u8);background:var(--u8l);color:var(--u8d);}
+.b.ok{border-color:var(--green)!important;background:var(--green-l)!important;color:var(--green-d)!important;}
+.b.no{border-color:var(--red)!important;background:var(--red-l)!important;color:var(--red)!important;}
+.b.sm{min-width:65px;}.b.lg{min-width:130px;}.b.xl{min-width:170px;}
+.b8{border-bottom-color:var(--u8);background:var(--u8l);color:var(--u8d);}
+
+/* FILL LINE */
+.fl{display:flex;align-items:center;flex-wrap:wrap;gap:5px;margin-bottom:11px;font-size:13px;font-weight:600;line-height:2.2;}
+.fn{width:22px;height:22px;background:var(--u7);color:white;border-radius:50%;font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.fn8{background:var(--u8);}
+
+/* MC */
+.mc{margin-bottom:14px;padding:12px 15px;background:#F8FAFC;border-radius:10px;border:1.5px solid var(--border);}
+.mc-q{font-size:13px;font-weight:700;margin-bottom:9px;line-height:1.5;}
+.mc-opts{display:flex;flex-wrap:wrap;gap:6px;}
+.mc-opt{padding:6px 13px;border:2px solid var(--border);border-radius:9px;background:white;font-family:'Nunito',sans-serif;font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;}
+.mc-opt:hover{border-color:var(--u7);color:var(--u7d);background:var(--u7l);}
+.mc-opt.ok{border-color:var(--green);background:var(--green-l);color:var(--green-d);}
+.mc-opt.no{border-color:var(--red);background:var(--red-l);color:var(--red);}
+.mc-opt.rev{border-color:var(--green);background:var(--green-l);color:var(--green-d);opacity:.5;}
+.mc-opts.col{flex-direction:column;}
+
+/* TRUE/FALSE */
+.tf{display:flex;align-items:center;gap:9px;padding:10px 13px;border-radius:9px;border:1.5px solid var(--border);margin-bottom:8px;background:white;transition:all .2s;}
+.tf.ok{background:var(--green-l);border-color:var(--green);}
+.tf.no{background:var(--red-l);border-color:var(--red);}
+.tf-num{font-size:10px;font-weight:900;color:var(--muted);width:16px;flex-shrink:0;}
+.tf-q{flex:1;font-size:12px;font-weight:700;line-height:1.5;}
+.tf-btns{display:flex;gap:5px;flex-shrink:0;}
+.tf-b{padding:4px 11px;border-radius:7px;border:2px solid;font-family:'Nunito',sans-serif;font-size:11px;font-weight:800;cursor:pointer;background:white;transition:all .2s;}
+.tf-b.T{border-color:var(--green);color:var(--green);}
+.tf-b.T:hover,.tf-b.T.sel{background:var(--green);color:white;}
+.tf-b.F{border-color:var(--red);color:var(--red);}
+.tf-b.F:hover,.tf-b.F.sel{background:var(--red);color:white;}
+.tf-icon{font-size:15px;}
+
+/* MATCH */
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:6px;}
+.match-col{display:flex;flex-direction:column;gap:6px;}
+.mi{padding:8px 12px;border-radius:9px;border:2px solid var(--border);font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;background:white;text-align:center;line-height:1.4;}
+.mi:hover{transform:scale(1.02);}
+.mi.selL{border-color:var(--amber);background:var(--amber-l);color:var(--amber-d);}
+.mi.selR{border-color:var(--amber);background:var(--amber-l);color:var(--amber-d);}
+.mi.matched{border-color:var(--green);background:var(--green-l);color:var(--green-d);pointer-events:none;}
+.mi.wrong{border-color:var(--red);background:var(--red-l);color:var(--red);}
+
+/* GRAMMAR BOX */
+.gram-box{border-radius:11px;padding:13px 15px;margin-bottom:16px;font-size:12px;font-weight:700;line-height:1.8;}
+.gram-box.g7{background:linear-gradient(135deg,#F0FDF4,#DCFCE7);border:2px solid #86EFAC;color:var(--u7d);}
+.gram-box.g8{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border:2px solid #93C5FD;color:var(--u8d);}
+.gram-box strong{font-size:14px;display:block;margin-bottom:6px;}
+.gram-row{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px;}
+.gram-cell{background:white;border-radius:7px;padding:7px 11px;font-size:11px;}
+.gram-cell .lbl{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:3px;}
+.freq-scale{display:flex;background:white;border-radius:9px;overflow:hidden;border:1.5px solid #BBF7D0;margin:8px 0;}
+.freq-item{flex:1;padding:7px 5px;text-align:center;border-right:1px solid #BBF7D0;}
+.freq-item:last-child{border-right:none;}
+.freq-item .pct{font-size:9px;color:var(--muted);font-weight:800;}
+.freq-item .word{font-size:13px;font-weight:900;color:var(--u7d);}
+
+/* BANK */
+.bank{display:flex;flex-wrap:wrap;gap:6px;background:var(--u7l);border:1.5px dashed var(--u7);border-radius:9px;padding:10px 13px;margin-bottom:14px;}
+.bank.b8{background:var(--u8l);border-color:var(--u8);}
+.wt{background:white;border:1.5px solid var(--u7);color:var(--u7d);padding:3px 11px;border-radius:18px;font-size:11px;font-weight:800;}
+.wt.w8{border-color:var(--u8);color:var(--u8d);}
+
+/* READING PASSAGE */
+.passage{border-radius:13px;padding:18px 20px;margin-bottom:18px;}
+.passage.p7{background:linear-gradient(135deg,#F0FDF4,#DCFCE7);border:2px solid #86EFAC;}
+.passage.p8{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border:2px solid #93C5FD;}
+.passage h4{font-family:'Fredoka One',cursive;font-size:19px;margin-bottom:3px;}
+.passage .ploc{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:11px;display:flex;align-items:center;gap:5px;}
+.passage p{font-size:13px;font-weight:600;line-height:1.9;}
+.passage p+p{margin-top:9px;}
+.hi7{background:#FEF3C7;border-radius:3px;padding:1px 3px;}
+.hi8{background:#FCE7F3;border-radius:3px;padding:1px 3px;}
+
+/* REORDER */
+.reorder-q{margin-bottom:14px;padding:13px;background:#F0FFF4;border-radius:10px;border:1.5px solid #86EFAC;}
+.reorder-q.rq8{background:#EFF6FF;border-color:#93C5FD;}
+.reorder-num{font-size:10px;font-weight:800;color:var(--muted);margin-bottom:7px;}
+.reorder-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:9px;}
+.rchip{padding:5px 11px;border:2px solid var(--u8);background:var(--u8l);border-radius:18px;font-size:12px;font-weight:800;color:var(--u8d);cursor:pointer;transition:all .2s;user-select:none;}
+.rchip:hover{background:var(--u8);color:white;}
+.rchip.placed{opacity:.3;pointer-events:none;text-decoration:line-through;}
+.ans-line{min-height:32px;padding:4px 11px;border:2px dashed var(--border);border-radius:9px;display:flex;flex-wrap:wrap;gap:5px;align-items:center;font-size:12px;font-weight:700;background:white;cursor:pointer;margin-bottom:5px;}
+.ans-line.has{border-style:solid;border-color:var(--u7);}
+.pchip{padding:3px 9px;background:var(--u7l);border:1.5px solid var(--u7);border-radius:14px;font-size:12px;font-weight:800;color:var(--u7d);cursor:pointer;}
+.pchip:hover{background:var(--red-l);border-color:var(--red);color:var(--red);}
+
+/* TEXTAREA */
+textarea{width:100%;border:2px solid var(--border);border-radius:9px;padding:9px 12px;font-family:'Nunito',sans-serif;font-size:12px;font-weight:600;outline:none;resize:vertical;color:var(--ink);}
+textarea:focus{border-color:var(--u7);}
+
+/* BUTTONS */
+.chk{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:10px;border:none;font-family:'Nunito',sans-serif;font-size:12px;font-weight:800;cursor:pointer;color:white;margin-top:12px;transition:all .2s;}
+.chk:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.18);}
+.chk:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none;}
+.chk.c7{background:var(--u7);}.chk.c8{background:var(--u8);}.chk.cp{background:var(--purple);}.chk.ca{background:var(--amber);}.chk.ck{background:var(--pink);}
+
+/* FEEDBACK */
+.fb{margin-top:9px;padding:9px 13px;border-radius:8px;font-size:12px;font-weight:700;display:none;animation:pop .3s;}
+.fb.show{display:block;}
+.fb.good{background:var(--green-l);color:var(--green-d);border:1.5px solid var(--green);}
+.fb.bad{background:var(--red-l);color:var(--red);border:1.5px solid var(--red);}
+@keyframes pop{from{transform:scale(.96);opacity:0}to{transform:scale(1);opacity:1}}
+
+/* FINAL & SUBMIT */
+.final{background:linear-gradient(135deg,#0F172A,#1E3A5F,#14532D);border-radius:16px;padding:26px;text-align:center;margin-top:24px;}
+.final h3{font-family:'Fredoka One',cursive;font-size:22px;color:white;margin-bottom:10px;}
+.final-score{font-family:'Fredoka One',cursive;font-size:60px;line-height:1;}
+.final-out{font-size:13px;font-weight:700;color:rgba(255,255,255,.45);margin-bottom:16px;}
+.grade-row{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;}
+.gchip{padding:7px 14px;border-radius:9px;font-size:11px;font-weight:800;border:1.5px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:rgba(255,255,255,.6);}
+.gchip.on{background:rgba(134,239,172,.15);border-color:#86EFAC;color:#86EFAC;}
+.submit-wrap{background:linear-gradient(135deg,#0F172A,#1E40AF);border-radius:16px;padding:26px;text-align:center;margin-top:16px;}
+.submit-wrap h3{font-family:'Fredoka One',cursive;font-size:20px;color:white;margin-bottom:6px;}
+.submit-wrap p{color:rgba(255,255,255,.6);font-size:12px;font-weight:700;margin-bottom:18px;}
+.submit-btn{display:inline-flex;align-items:center;gap:9px;padding:14px 32px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--u7),#22C55E);color:white;font-family:'Nunito',sans-serif;font-size:15px;font-weight:900;cursor:pointer;transition:all .25s;box-shadow:0 4px 18px rgba(22,163,74,.4);}
+.submit-btn:hover{transform:translateY(-3px);box-shadow:0 8px 26px rgba(22,163,74,.5);}
+.submit-btn:disabled{background:#64748B;cursor:not-allowed;transform:none;box-shadow:none;}
+.submit-status{margin-top:14px;padding:11px 18px;border-radius:9px;font-size:13px;font-weight:700;display:none;}
+.submit-status.sending{background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);display:block;}
+.submit-status.sent{background:#D1FAE5;color:#065F46;display:block;}
+.submit-status.error{background:#FEE2E2;color:#991B1B;display:block;}
+
+/* WARN / SUSPEND */
+#warn-modal{display:none;position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.75);backdrop-filter:blur(4px);align-items:center;justify-content:center;}
+#warn-modal.show{display:flex;}
+.warn-box{background:white;border-radius:18px;padding:32px 28px;max-width:440px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.4);animation:wPop .35s cubic-bezier(.34,1.56,.64,1);}
+@keyframes wPop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+.warn-icon{font-size:50px;margin-bottom:12px;display:block;}
+.warn-box h2{font-family:'Fredoka One',cursive;font-size:24px;color:#DC2626;margin-bottom:8px;}
+.warn-box p{font-size:13px;font-weight:700;color:#64748B;line-height:1.7;margin-bottom:14px;}
+.warn-count{display:inline-block;background:#FEE2E2;color:#DC2626;font-size:12px;font-weight:900;padding:5px 14px;border-radius:18px;margin-bottom:14px;border:2px solid #FCA5A5;}
+.warn-btn{padding:11px 28px;border-radius:10px;border:none;background:#DC2626;color:white;font-family:'Nunito',sans-serif;font-size:14px;font-weight:900;cursor:pointer;}
+.warn-btn:hover{background:#B91C1C;}
+#suspended-screen{display:none;position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#0F172A,#450A0A,#7F1D1D);align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:28px;}
+#suspended-screen.show{display:flex;}
+.sus-icon{font-size:70px;margin-bottom:16px;animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+.sus-box{max-width:500px;width:100%;}
+.sus-box h1{font-family:'Fredoka One',cursive;font-size:clamp(26px,5vw,42px);color:#FCA5A5;margin-bottom:10px;}
+.sus-sub{font-size:15px;font-weight:800;color:rgba(255,255,255,.65);margin-bottom:24px;}
+.sus-detail{background:rgba(239,68,68,.12);border:2px solid rgba(239,68,68,.35);border-radius:12px;padding:18px 22px;margin-bottom:20px;text-align:left;}
+.sus-detail p{font-size:12px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:7px;display:flex;align-items:center;gap:7px;}
+.sus-detail p:last-child{margin-bottom:0;}
+.sus-detail span.lbl{color:#FCA5A5;font-weight:900;min-width:90px;display:inline-block;}
+.sus-stamp{display:inline-block;border:3px solid #EF4444;border-radius:10px;padding:8px 24px;color:#EF4444;font-family:'Fredoka One',cursive;font-size:20px;letter-spacing:3px;transform:rotate(-3deg);margin-bottom:20px;text-transform:uppercase;}
+.sus-note{font-size:11px;font-weight:700;color:rgba(255,255,255,.3);line-height:1.6;}
+.note-teacher{font-size:11px;font-style:italic;color:var(--muted);font-weight:600;margin-top:5px;}
+
+/* CLOTHES GRID */
+.clothes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-bottom:10px;}
+.clothes-card{border:2px solid var(--border);border-radius:10px;padding:10px 8px 7px;text-align:center;background:white;}
+.clothes-card .emo{font-size:26px;margin-bottom:5px;}
+.clothes-card input{width:100%;min-width:0;font-size:10px;text-align:center;}
+
+/* DESCRIBE PERSON */
+.person-card{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border:2px solid #93C5FD;border-radius:12px;padding:15px 18px;margin-bottom:16px;font-size:13px;font-weight:700;color:var(--u8d);line-height:1.9;}
+.person-card strong{font-size:15px;display:block;margin-bottom:4px;}
+
+@media print{.bar,.print-btn,.chk,.final,.submit-wrap,#warn-modal,#suspended-screen{display:none!important;}body{background:white;}.ex{box-shadow:none;break-inside:avoid;}}
+@media(max-width:520px){.match-grid,.gram-row,.clothes-grid{grid-template-columns:1fr}.student-fields{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- MODALS -->
+<div id="warn-modal"><div class="warn-box"><span class="warn-icon">⚠️</span><h2>¡Atención!</h2><p>Saliste de la pestaña del examen.<br>Esto <strong>no está permitido</strong> durante la evaluación.</p><div class="warn-count" id="warn-count-badge">Advertencia 1 de 1</div><p style="font-size:12px;color:#DC2626;font-weight:800">Si vuelves a salir, tu examen quedará <strong>SUSPENDIDO</strong>.</p><br><button class="warn-btn" onclick="closeWarning()">Entendido — volver al examen</button></div></div>
+<div id="suspended-screen"><div class="sus-box"><div class="sus-icon">🚫</div><h1>Examen Suspendido</h1><p class="sus-sub">Tu examen fue suspendido por abandonar la pestaña.</p><div class="sus-detail"><p><span class="lbl">Estudiante:</span><span id="sus-name">—</span></p><p><span class="lbl">Clase:</span><span id="sus-class">—</span></p><p><span class="lbl">Hora:</span><span id="sus-time">—</span></p><p><span class="lbl">Motivo:</span>Salida de pestaña detectada</p></div><div class="sus-stamp">Suspendido</div><p class="sus-note">Esta pantalla no puede cerrarse. Avisa a tu profesor/a.</p></div></div>
+
+<!-- COVER -->
+<div class="cover"><div class="cover-inner">
+  <div class="cover-badges"><span class="badge badge-school">Metro Starter · Review D</span><span class="badge badge-exam">✏️ Written Exam</span></div>
+  <h1>Units <span class="u7">7</span> &amp; <span class="u8">8</span> — Combined Exam</h1>
+  <p class="cover-sub">Be good! · My style · Vocabulary · Grammar · Reading · Writing</p>
+  <div class="unit-pills">
+    <span class="upill upill-7">🌿 Unit 7 · Habits &amp; Food</span>
+    <span class="upill upill-8">👗 Unit 8 · Style &amp; Descriptions</span>
+  </div>
+  <div class="student-fields">
+    <div class="sfield"><label>Student name</label><input type="text" id="student-name" placeholder="Full name..."></div>
+    <div class="sfield"><label>Date</label><input type="text" id="student-date" placeholder="dd / mm / yyyy"></div>
+    <div class="sfield"><label>Class</label><input type="text" id="student-class" placeholder="Your class..."></div>
+    <div class="score-box"><label>Total score</label><div class="final-score" id="total-disp" style="color:#86EFAC;">0</div><span style="color:rgba(255,255,255,.4);font-size:13px;font-weight:700;">/ 80 pts</span></div>
+  </div>
+</div></div>
+
+<!-- STICKY BAR -->
+<div class="bar">
+  <div class="bar-chip"><span>⏱</span>~60 min</div>
+  <div class="bar-chip"><span>📚</span>Units 7 + 8</div>
+  <div class="bar-chip"><span>✍️</span>6 sections</div>
+  <div class="prog-wrap"><div class="prog-track"><div class="prog-fill" id="prog" style="width:0%"></div></div><div class="prog-pts" id="pts-disp">0 / 80</div></div>
+</div>
+<button class="print-btn" onclick="window.print()">🖨️ Print exam</button>
+
+<div class="page">
+
+<!-- ══════════════════ UNIT 7 ══════════════════ -->
+<div class="unit-div u7">
+  <div class="unit-num">7</div>
+  <div class="unit-info"><h2>Be good! — Habits &amp; Food</h2><p>Vocabulary · Adverbs of frequency · Do/Does · Reading</p></div>
+  <div class="unit-pts"><strong>40</strong><span>points</span></div>
+</div>
+
+<!-- §1 VOCAB U7 -->
+<div class="sec-div">
+  <div class="sec-num" style="color:var(--u7)">1</div>
+  <div class="sec-info"><h3 style="color:var(--u7d)">Vocabulary — Habits &amp; Food</h3><p>Match habits · Label food · Choose the word</p></div>
+  <div class="sec-pts"><strong style="color:var(--u7)">14</strong><span>points</span></div>
+</div>
+
+<!-- 1A Match habits -->
+<div class="ex">
+  <div class="ex-hd"><div class="ex-letter" style="background:var(--u7)">A</div><h4>Match the verb (left) with the phrase (right) to make a habit.</h4><span class="ex-pts">6 pts</span></div>
+  <div class="ex-body">
+    <div class="inst">Click a verb on the left, then click the matching phrase on the right.</div>
+    <div class="match-grid">
+      <div class="match-col">
+        <div class="mi" onclick="matchGame(this,'hL1')" data-id="hL1" style="border-color:#86EFAC;background:#F0FDF4;font-weight:900">study</div>
+        <div class="mi" onclick="matchGame(this,'hL2')" data-id="hL2" style="border-color:#86EFAC;background:#F0FDF4;font-weight:900">forget</div>
+        <div class="mi" onclick="matchGame(this,'hL3')" data-id="hL3" style="border-color:#86EFAC;background:#F0FDF4;font-weight:900">play</div>
+        <div class="mi" onclick="matchGame(this,'hL4')" data-id="hL4" style="border-color:#86EFAC;background:#F0FDF4;font-weight:900">watch</div>
+        <div class="mi" onclick="matchGame(this,'hL5')" data-id="hL5" style="border-color:#86EFAC;background:#F0FDF4;font-weight:900">go to bed</div>
+        <div class="mi" onclick="matchGame(this,'hL6')" data-id="hL6" style="border-color:#86EFAC;background:#F0FDF4;font-weight:900">be</div>
+      </div>
+      <div class="match-col">
+        <div class="mi" onclick="matchGame(this,'hR1')" data-id="hR1" style="border-style:dashed">for tests</div>
+        <div class="mi" onclick="matchGame(this,'hR2')" data-id="hR2" style="border-style:dashed">your gym clothes</div>
+        <div class="mi" onclick="matchGame(this,'hR3')" data-id="hR3" style="border-style:dashed">sports</div>
+        <div class="mi" onclick="matchGame(this,'hR4')" data-id="hR4" style="border-style:dashed">TV all evening</div>
+        <div class="mi" onclick="matchGame(this,'hR5')" data-id="hR5" style="border-style:dashed">early</div>
+        <div class="mi" onclick="matchGame(this,'hR6')" data-id="hR6" style="border-style:dashed">on time</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 1B label food -->
+<div class="ex">
+  <div class="ex-hd"><div class="ex-letter" style="background:var(--u7)">B</div><h4>Write the correct food word under each emoji.</h4><span class="ex-pts">5 pts</span></div>
+  <div class="ex-body">
+    <div class="bank"><span class="wt">bread</span><span class="wt">meat</span><span class="wt">rice</span><span class="wt">pasta</span><span class="wt">vegetables</span><span class="wt">cheese</span><span class="wt">fruit</span></div>
+    <div class="clothes-grid" style="grid-template-columns:repeat(auto-fill,minmax(100px,1fr));">
+      <div class="clothes-card"><div class="emo">🍞</div><input class="b" style="width:100%;min-width:0;font-size:10px;text-align:center" data-a="bread" data-ex="1b" placeholder="..."></div>
+      <div class="clothes-card"><div class="emo">🥩</div><input class="b" style="width:100%;min-width:0;font-size:10px;text-align:center" data-a="meat" data-ex="1b" placeholder="..."></div>
+      <div class="clothes-card"><div class="emo">🌾</div><input class="b" style="width:100%;min-width:0;font-size:10px;text-align:center" data-a="rice" data-ex="1b" placeholder="..."></div>
+      <div class="clothes-card"><div class="emo">🍝</div><input class="b" style="width:100%;min-width:0;font-size:10px;text-align:center" data-a="pasta" data-ex="1b" placeholder="..."></div>
+      <div class="clothes-card"><div class="emo">🥦</div><input class="b" style="width:100%;min-width:0;font-size:10px;text-align:center" data-a="vegetables" data-ex="1b" placeholder="..."></div>
+    </div>
+    <button class="chk c7" onclick="chkEx(this,'1b')">✅ Check</button><div class="fb" id="1b-fb"></div>
+  </div>
+</div>
+
+<!-- 1C MC vocab -->
+<div class="ex">
+  <div class="ex-hd"><div class="ex-letter" style="background:var(--u7)">C</div><h4>Choose the correct word.</h4><span class="ex-pts">3 pts</span></div>
+  <div class="ex-body">
+    <div class="mc" data-sec="1c"><div class="mc-q">1. She goes to bed at 9 every night. She <strong>_____</strong> goes to bed early.</div><div class="mc-opts"><button class="mc-opt" onclick="cho(this,false,'1')">never</button><button class="mc-opt" onclick="cho(this,false,'1')">sometimes</button><button class="mc-opt" onclick="cho(this,true,'1')">always</button></div></div>
+    <div class="mc" data-sec="1c"><div class="mc-q">2. I eat pizza once or twice a year. I <strong>_____</strong> eat pizza.</div><div class="mc-opts"><button class="mc-opt" onclick="cho(this,false,'1')">always</button><button class="mc-opt" onclick="cho(this,false,'1')">often</button><button class="mc-opt" onclick="cho(this,true,'1')">sometimes</button></div></div>
+    <div class="mc" data-sec="1c"><div class="mc-q">3. He <strong>_____</strong> eats fast food — 0%! He thinks it's terrible.</div><div class="mc-opts"><button class="mc-opt" onclick="cho(this,false,'1')">always</button><button class="mc-opt" onclick="cho(this,true,'1')">never</button><button class="mc-opt" onclick="cho(this,false,'1')">often</button></div></div>
+  </div>
+</div>
+
+<!-- §2 GRAMMAR ADVERBS + DO/DOES -->
+<div class="sec-div">
+  <div class="sec-num" style="color:var(--u7)">2</div>
+  <div class="sec-info"><h3 style="color:var(--u7d)">Grammar — Adverbs of Frequency &amp; Do/Does</h3><p>Position rules · Questions · Short answers</p></div>
+  <div class="sec-pts"><strong style="color:var(--u7)">16</strong><span>points</span></div>
+</div>
+
+<div class="gram-box g7">
+  <strong>📌 Adverbs of frequency</strong>
+  <div class="freq-scale">
+    <div class="freq-item"><div class="pct">0%</div><div class="word">never</div></div>
+    <div class="freq-item"><div class="pct">~25%</div><div class="word">sometimes</div></div>
+    <div class="freq-item"><div class="pct">~75%</div><div class="word">often</div></div>
+    <div class="freq-item"><div class="pct">100%</div><div class="word">always</div></div>
+  </div>
+  <div class="gram-row">
+    <div class="gram-cell" style="border:1.5px solid #BBF7D0"><span class="lbl">After BE</span>She <strong>is never</strong> late. &nbsp;He <strong>is always</strong> on time.</div>
+    <div class="gram-cell" style="border:1.5px solid #BBF7D0"><span class="lbl">Before other verbs</span>I <strong>never eat</strong> fast food. &nbsp;She <strong>often goes</strong> to bed early.</div>
+  </div>
+</div>
+
+<!-- 2A adverb fill -->
+<div class="ex">
+  <div class="ex-hd"><div class="ex-letter" style="background:var(--u7)">A</div><h4>Write the adverb in the correct position. The adverb is in [ ].</h4><span class="ex-pts">6 pts</span></div>
+  <div class="ex-body">
+    <div class="fl"><div class="fn">1</div> She is <input class="b sm" data-a="never" data-ex="2a" placeholder="..."> late for school. [never]</div>
+    <div class="fl"><div class="fn">2</div> I <input class="b sm" data-a="sometimes" data-ex="2a" placeholder="..."> eat fast food. [sometimes]</div>
+    <div class="fl"><div class="fn">3</div> He is <input class="b sm" data-a="always" data-ex="2a" placeholder="..."> late — every single day! [always]</div>
+    <div class="fl"><div class="fn">4</div> We <input class="b sm" data-a="often" data-ex="2a" placeholder="..."> play soccer on weekends. [often]</div>
+    <div class="fl"><div class="fn">5</div> They are <input class="b sm" data-a="always" data-ex="2a" placeholder="..."> happy at school. [always]</div>
+    <div class="fl"><div class="fn">6</div> She <input class="b sm" data-a="never" data-ex="2a" placeholder="..."> goes to bed late. [never]</div>
+    <button class="chk c7" onclick="chkEx(this,'2a')">✅ Check</button><div class="fb" id="2a-fb"></div>
+  </div>
+</div>
+
+<!-- 2B Do/Does -->
+<div class="gram-box g7" style="margin-top:4px;">
+  <strong>📌 Do / Does — questions &amp; short answers</strong>
+  <div class="gram-row">
+    <div class="gram-cell" style="border:1.5px solid #BBF7D0"><span class="lbl">Questions</span><strong>Do</strong> I/you/we/they eat fish? &nbsp;·&nbsp; <strong>Does</strong> he/she/it like meat?</div>
+    <div class="gram-cell" style="border:1.5px solid #BBF7D0"><span class="lbl">Short answers</span>Yes, I <strong>do</strong>. / No, I <strong>don't</strong>. &nbsp;·&nbsp; Yes, she <strong>does</strong>. / No, she <strong>doesn't</strong>.</div>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-hd"><div class="ex-letter" style="background:var(--u7)">B</div><h4>Complete with <em>Do</em> or <em>Does</em>. Then write the short answer.</h4><span class="ex-pts">10 pts</span></div>
+  <div class="ex-body">
+    <div class="inst">Write Do/Does for the question — then do/don't/does/doesn't for the answer.</div>
+    <div class="fl" style="flex-wrap:wrap;gap:8px"><div class="fn">1</div><span style="font-weight:700">Q:</span> <input class="b sm" data-a="do" data-ex="2b" placeholder="..."> you eat vegetables? &nbsp;<span style="font-weight:700">Answer (✓):</span> Yes, I <input class="b sm" data-a="do" data-ex="2b" placeholder="">.</div>
+    <div class="fl" style="flex-wrap:wrap;gap:8px"><div class="fn">2</div><span style="font-weight:700">Q:</span> <input class="b sm" data-a="does" data-ex="2b" placeholder="..."> she like fast food? &nbsp;<span style="font-weight:700">Answer (✗):</span> No, she <input class="b sm" data-a="doesn't" data-ex="2b" placeholder="">.</div>
+    <div class="fl" style="flex-wrap:wrap;gap:8px"><div class="fn">3</div><span style="font-weight:700">Q:</span> <input class="b sm" data-a="do" data-ex="2b" placeholder="..."> they study for tests? &nbsp;<span style="font-weight:700">Answer (✓):</span> Yes, they <input class="b sm" data-a="do" data-ex="2b" placeholder="">.</div>
+    <div class="fl" style="flex-wrap:wrap;gap:8px"><div class="fn">4</div><span style="font-weight:700">Q:</span> <input class="b sm" data-a="does" data-ex="2b" placeholder="..."> he go to bed early? &nbsp;<span style="font-weight:700">Answer (✗):</span> No, he <input class="b sm" data-a="doesn't" data-ex="2b" placeholder="">.</div>
+    <div class="fl" style="flex-wrap:wrap;gap:8px"><div class="fn">5</div><span style="font-weight:700">Q:</span> <input class="b sm" data-a="do" data-ex="2b" placeholder="..."> we have pasta tonight? &nbsp;<span style="font-weight:700">Answer (✓):</span> Yes, we <input class="b sm" data-a="do" data-ex="2b" placeholder="">.</div>
+    <button class="chk c7" onclick="chkEx(this,'2b')">✅ Check</button><div class="fb" id="2b-fb"></div>
+  </div>
+</div>
+
+<!-- §3 READING U7 -->
+<div class="sec-div">
+  <div class="sec-num" style="color:var(--pink)">3</div>
+  <div class="sec-info"><h3 style="color:var(--pink-d)">Reading — Habits blog</h3><p>True/False · Fill from text · Vocabulary</p></div>
+  <div class="sec-pts"><strong style="color:var(--pink)">10</strong><span>points</span></div>
+</div>
+
+<div class="passage p7">
+  <h4 style="color:var(--u7d)">🥗 My Healthy Habits Blog</h4>
+  <div class="ploc" style="color:var(--u7)">📍 Lima, Peru &nbsp;·&nbsp; ✍️ Carlos, age 15</div>
+  <p>Hi! My name is Carlos and I'm <strong>15</strong> years old. I'm from Lima, Peru. I write a blog about <span class="hi7">healthy habits</span>!</p>
+  <p>I <strong>always</strong> have breakfast before school. I often eat fruit and <strong>vegetables</strong> — they're <span class="hi7">delicious</span>! I never eat fast food at school. My mom sometimes cooks pasta or <strong>rice</strong> for dinner.</p>
+  <p>My best friend Ana has different habits. She <strong>never</strong> eats breakfast! She sometimes eats fast food for lunch. But she <strong>always</strong> plays sports after school and often goes to bed at <strong>10:00</strong> p.m.</p>
+</div>
+
+<div class="ex">
+  <div class="ex-hd"><div class="ex-letter" style="background:var(--pink)">A</div><h4>True (T) or False (F)?</h4><span class="ex-pts">4 pts</span></div>
+  <div class="ex-body">
+    <div class="tf" id="tf1"><div class="tf-num">1</div><div class="tf-q">Carlos always has breakfast before school.</div><div class="tf-btns"><button class="tf-b T" onclick="doTF(this,'T','T','tf1')">T</button><button class="tf-b F" onclick="doTF(this,'F','T','tf1')">F</button></div><div class="tf-icon"></div></div>
+    <div class="tf" id="tf2"><div class="tf-num">2</div><div class="tf-q">Carlos often eats fast food at school.</div><div class="tf-btns"><button class="tf-b T" onclick="doTF(this,'T','F','tf2')">T</button><button class="tf-b F" onclick="doTF(this,'F','F','tf2')">F</button></div><div class="tf-icon"></div></div>
+    <div class="tf" id="tf3"><div class="tf-num">3</div><div class="tf-q">Ana never eats breakfast.</div><div class="tf-btns"><button class="tf-b T" onclick="doTF(this,'T','T','tf3')">T</button><button class="tf-b F" onclick="doTF(this,'F','T','tf3')">F</button></div><div class="tf-icon"></div></div>
+    <div class="tf" id="tf4"><div class="tf-num">4</div><div class="tf-q">Ana never plays sports after school.</div><div class="tf-btns"><button class="tf-b T" onclick="doTF(this,'T','F','tf4')">T</button><button class="tf-b F" onclick="doTF(this,'F','F','tf4')">F</button></div><div class="tf-icon"></div></div>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-hd"><div class="ex-letter" style="background:var(--pink)">B</div><h4>Complete with words from the text (1–3 words).</h4><span class="ex-pts">6 pts</span></div>
+  <div class="ex-body">
+    <div class="fl"><div class="fn">1</div> Carlos is <input class="b sm" data-a="15" data-ex="3b" placeholder="..."> years old.</div>
+    <div class="fl"><div class="fn">2</div> He often eats fruit and <input class="b" data-a="vegetables" data-ex="3b" placeholder="...">.</div>
+    <div class="fl"><div class="fn">3</div> His mom sometimes cooks pasta or <input class="b sm" data-a="rice" data-ex="3b" placeholder="..."> for dinner.</div>
+    <div class="fl"><div class="fn">4</div> Ana sometimes eats <input class="b lg" data-a="fast food" data-ex="3b" placeholder="..."> for lunch.</div>
+    <div class="fl"><div class="fn">5</div> Ana <input class="b sm" data-a="always" data-ex="3b" placeholder="..."> plays sports after school.</div>
+    <div class="fl"><div class="fn">6</div> Ana often goes to bed at <input class="b sm" data-a="10:00" data-ex="3b" placeholder="..."> p.m.</div>
+    <button class="chk ck" onclick="chkEx(this,'3b')">✅ Check</button><div class="fb" id="3b-fb"></div>
+  </div>
+</div>
+
+<!-- ══════════════════ UNIT 8 ══════════════════ -->
+<div class="unit-div u8">
+  <div class="unit-num">8</div>
+  <div class="unit-info"><h2>My style — Descriptions &amp; Clothes</h2><p>Physical descriptions · Clothes · Wh- questions · Object pronouns</p></div>
+  <div class="unit-pts"><strong>40</strong><span>points</span></div>
+</div>
+
+<!-- §4 VOCAB U8 -->
+<div class="sec-div">
+  <div class="sec-num" style="color:var(--u8)">4</div>
+  <div class="sec-info"><h3 style="color:var(--u8d)">Vocabulary — Clothes &amp; Descriptions</h3><p>Label clothes · Describe people</p></div>
+  <div class="sec-pts"><strong style="color:var(--u8)">12</strong><span>points</span></div>
+</div>
+
+<!-- 4A label clothes -->
+<div class="ex">
+  <div class="ex-hd"><div class="ex-letter" style="background:var(--u8)">A</div><h4>Write the correct clothes word under each emoji.</h4><span class="ex-pts">7 pts</span></div>
+  <div class="ex-body">
+    <div class="bank b8"><span class="wt w8">jacket</span><span class="wt w8">dress</span><span class="wt w8">boots</span><span class="wt w8">cap</span><span class="wt w8">skirt</span><span class="wt w8">sweater</span><span class="wt w8">T-shirt</span><span class="wt w8">pants</span><span class="wt w8">shoes</span></div>
+    <div class="clothes-grid">
+      <div class="clothes-card"><div class="emo">🧥</div><input class="b b8" style="width:100%;min-width:0;font-size:10px;text-align:center" data-a="jacket" data-ex="4a" placeholder="..."></div>
+      <div class="clothes-card"><div class="emo">👗</div><input class="b b8" style="width:100%;min-width:0;font-size:10px;text-align:center" data-a="dress" data-ex="4a" placeholder="..."></div>
+      <div class="clothes-card"><div class="emo">👢</div><input class="b b8" style="width:100%;min-width:0;font-size:10px;text-align:center" data-a="boots" data-ex="4a" placeholder="..."></div>
+      <div class="clothes-card"><div class="emo">🧢</div><input class="b b8" style="width:100%;min-width:0;font-size:10px;text-align:center" data-a="cap" data-ex="4a" placeholder="..."></div>
+      <div class="clothes-card"><div class="emo">👘</div><input class="b b8" style="width:100%;min-width:0;font-size:10px;text-align:center" data-a="skirt" data-ex="4a" placeholder="..."></div>
+      <div class="clothes-card"><div class="emo">🧶</div><input class="b b8" style="width:100%;min-width:0;font-size:10px;text-align:center" data-a="sweater" data-ex="4a" placeholder="..."></div>
+      <div class="clothes-card"><div class="emo">👕</div><input class="b b8" style="width:100%;min-width:0;font-size:10px;text-align:center" data-a="t-shirt" data-ex="4a" placeholder="..."></div>
+    </div>
+    <button class="chk c8" onclick="chkEx(this,'4a')">✅ Check</button><div class="fb" id="4a-fb"></div>
+  </div>
+</div>
+
+<!-- 4B physical description MC -->
+<div class="ex">
+  <div class="ex-hd"><div class="ex-letter" style="background:var(--u8)">B</div><h4>Choose the correct word for each physical description.</h4><span class="ex-pts">5 pts</span></div>
+  <div class="ex-body">
+    <div class="mc" data-sec="4b"><div class="mc-q">1. She is 1.85 m. She is very <strong>_____</strong>.</div><div class="mc-opts"><button class="mc-opt" onclick="cho(this,false,'4')">short</button><button class="mc-opt" onclick="cho(this,true,'4')">tall</button><button class="mc-opt" onclick="cho(this,false,'4')">curly</button></div></div>
+    <div class="mc" data-sec="4b"><div class="mc-q">2. His hair goes in circles and spirals. He has <strong>_____</strong> hair.</div><div class="mc-opts"><button class="mc-opt" onclick="cho(this,false,'4')">straight</button><button class="mc-opt" onclick="cho(this,false,'4')">blond</button><button class="mc-opt" onclick="cho(this,true,'4')">curly</button></div></div>
+    <div class="mc" data-sec="4b"><div class="mc-q">3. Her hair is yellow / golden in color. She has <strong>_____</strong> hair.</div><div class="mc-opts"><button class="mc-opt" onclick="cho(this,true,'4')">blond</button><button class="mc-opt" onclick="cho(this,false,'4')">dark</button><button class="mc-opt" onclick="cho(this,false,'4')">long</button></div></div>
+    <div class="mc" data-sec="4b"><div class="mc-q">4. He is 1.48 m. He is <strong>_____</strong>.</div><div class="mc-opts"><button class="mc-opt" onclick="cho(this,true,'4')">short</button><button class="mc-opt" onclick="cho(this,false,'4')">tall</button><button class="mc-opt" onclick="cho(this,false,'4')">dark</button></div></div>
+    <div class="mc" data-sec="4b"><div class="mc-q">5. Her hair is very long and goes down in one direction. She has <strong>_____</strong> hair.</div><div class="mc-opts"><button class="mc-opt" onclick="cho(this,false,'4')">curly</button><button class="mc-opt" onclick="cho(this,true,'4')">straight</button><button class="mc-opt" onclick="cho(this,false,'4')">short</button></div></div>
+  </div>
+</div>
+
+<!-- §5 GRAMMAR U8 -->
+<div class="sec-div">
+  <div class="sec-num" style="color:var(--u8)">5</div>
+  <div class="sec-info"><h3 style="color:var(--u8d)">Grammar — Wh- Questions &amp; Object Pronouns</h3><p>What/Where/When/How · me, him, her, it, us, them</p></div>
+  <div class="sec-pts"><strong style="color:var(--u8)">18</strong><span>points</span></div>
+</div>
+
+<div class="gram-box g8">
+  <strong>📌 Simple present: Wh- questions</strong>
+  <div class="gram-row">
+    <div class="gram-cell" style="border:1.5px solid #93C5FD"><span class="lbl">Structure</span><strong>Wh-word + do/does + subject + verb?</strong><br>Where <strong>do you</strong> live? &nbsp;·&nbsp; What <strong>does she</strong> eat?</div>
+    <div class="gram-cell" style="border:1.5px solid #93C5FD"><span class="lbl">Wh- words</span>What · Where · When · Why · How · Who</div>
+  </div>
+</div>
+
+<!-- 5A Wh- questions fill -->
+<div class="ex">
+  <div class="ex-hd"><div class="ex-letter" style="background:var(--u8)">A</div><h4>Complete the Wh- questions with the correct question word and <em>do/does</em>.</h4><span class="ex-pts">8 pts</span></div>
+  <div class="ex-body">
+    <div class="inst">Use: What / Where / When / How · + do or does</div>
+    <div class="fl"><div class="fn fn8">1</div> "<input class="b sm b8" data-a="what" data-ex="5a" placeholder="..."> <input class="b sm b8" data-a="do" data-ex="5a" placeholder="..."> you like?" — "I like music and sports."</div>
+    <div class="fl"><div class="fn fn8">2</div> "<input class="b sm b8" data-a="where" data-ex="5a" placeholder="..."> <input class="b sm b8" data-a="does" data-ex="5a" placeholder="..."> she live?" — "She lives in Lima."</div>
+    <div class="fl"><div class="fn fn8">3</div> "<input class="b sm b8" data-a="when" data-ex="5a" placeholder="..."> <input class="b sm b8" data-a="do" data-ex="5a" placeholder="..."> they go to school?" — "At 8 a.m."</div>
+    <div class="fl"><div class="fn fn8">4</div> "<input class="b sm b8" data-a="how" data-ex="5a" placeholder="..."> <input class="b sm b8" data-a="does" data-ex="5a" placeholder="..."> he go to school?" — "He walks."</div>
+    <button class="chk c8" onclick="chkEx(this,'5a')">✅ Check</button><div class="fb" id="5a-fb"></div>
+  </div>
+</div>
+
+<div class="gram-box g8">
+  <strong>📌 Object pronouns</strong>
+  <div class="gram-row">
+    <div class="gram-cell" style="border:1.5px solid #93C5FD"><span class="lbl">Subject → Object</span>I→<strong>me</strong> · you→<strong>you</strong> · he→<strong>him</strong> · she→<strong>her</strong></div>
+    <div class="gram-cell" style="border:1.5px solid #93C5FD"><span class="lbl">More</span>it→<strong>it</strong> · we→<strong>us</strong> · they→<strong>them</strong><br>Example: "I like <strong>him</strong>." / "She loves <strong>it</strong>."</div>
+  </div>
+</div>
+
+<!-- 5B object pronouns -->
+<div class="ex">
+  <div class="ex-hd"><div class="ex-letter" style="background:var(--u8)">B</div><h4>Replace the underlined words with the correct object pronoun.</h4><span class="ex-pts">5 pts</span></div>
+  <div class="ex-body">
+    <div class="fl"><div class="fn fn8">1</div> I like <u>this dress</u>. → I like <input class="b sm b8" data-a="it" data-ex="5b" placeholder="...">.  </div>
+    <div class="fl"><div class="fn fn8">2</div> She calls <u>Carlos</u> every day. → She calls <input class="b sm b8" data-a="him" data-ex="5b" placeholder="..."> every day.</div>
+    <div class="fl"><div class="fn fn8">3</div> Do you know <u>Ana and me</u>? → Do you know <input class="b sm b8" data-a="us" data-ex="5b" placeholder="...">?</div>
+    <div class="fl"><div class="fn fn8">4</div> I love <u>my sneakers</u>. I wear <u>my sneakers</u> every day. → I love <input class="b sm b8" data-a="them" data-ex="5b" placeholder="...">. I wear <input class="b sm b8" data-a="them" data-ex="5b" placeholder="..."> every day.</div>
+    <button class="chk c8" onclick="chkEx(this,'5b')">✅ Check</button><div class="fb" id="5b-fb"></div>
+  </div>
+</div>
+
+<!-- 5C choose correct -->
+<div class="ex">
+  <div class="ex-hd"><div class="ex-letter" style="background:var(--u8)">C</div><h4>Choose the correct word.</h4><span class="ex-pts">5 pts</span></div>
+  <div class="ex-body">
+    <div class="mc" data-sec="5c"><div class="mc-q">1. I love volleyball. We always watch <strong>it / him</strong> on TV.</div><div class="mc-opts"><button class="mc-opt" onclick="cho(this,true,'5')">it</button><button class="mc-opt" onclick="cho(this,false,'5')">him</button></div></div>
+    <div class="mc" data-sec="5c"><div class="mc-q">2. Mom makes rice for <strong>we / us</strong> on Saturdays.</div><div class="mc-opts"><button class="mc-opt" onclick="cho(this,false,'5')">we</button><button class="mc-opt" onclick="cho(this,true,'5')">us</button></div></div>
+    <div class="mc" data-sec="5c"><div class="mc-q">3. <strong>Her / She</strong>'s always late. It's OK. She can go home with <strong>me / I</strong>.</div><div class="mc-opts"><button class="mc-opt" onclick="cho(this,true,'5')">She / me</button><button class="mc-opt" onclick="cho(this,false,'5')">Her / I</button><button class="mc-opt" onclick="cho(this,false,'5')">Her / me</button></div></div>
+    <div class="mc" data-sec="5c"><div class="mc-q">4. <strong>What / Where</strong> does she look like?</div><div class="mc-opts"><button class="mc-opt" onclick="cho(this,true,'5')">What</button><button class="mc-opt" onclick="cho(this,false,'5')">Where</button></div></div>
+    <div class="mc" data-sec="5c"><div class="mc-q">5. <strong>When / How</strong> do you go to school? — I walk.</div><div class="mc-opts"><button class="mc-opt" onclick="cho(this,false,'5')">When</button><button class="mc-opt" onclick="cho(this,true,'5')">How</button></div></div>
+  </div>
+</div>
+
+<!-- §6 READING U8 + WRITING -->
+<div class="sec-div">
+  <div class="sec-num" style="color:var(--u8)">6</div>
+  <div class="sec-info"><h3 style="color:var(--u8d)">Reading &amp; Writing — Descriptions</h3><p>Read a profile · Answer questions · Describe someone</p></div>
+  <div class="sec-pts"><strong style="color:var(--u8)">10</strong><span>points</span></div>
+</div>
+
+<div class="passage p8">
+  <h4 style="color:var(--u8d)">👤 Player Profile — Alex</h4>
+  <div class="ploc" style="color:var(--u8)">🎮 Video game avatar description</div>
+  <p>Alex is <strong>tall</strong>. He has <span class="hi8">blue</span> eyes and <span class="hi8">blond</span> hair. His hair is <strong>long</strong> and <strong>straight</strong>. He always wears a blue <span class="hi8">jacket</span> and black <span class="hi8">pants</span>. He sometimes wears a <strong>cap</strong>.</p>
+  <p>His best friend Mia is <strong>short</strong>. She has <span class="hi8">dark</span>, <span class="hi8">curly</span> hair and brown eyes. She loves <strong>fashion</strong>! She always wears a <span class="hi8">dress</span> or a <strong>skirt</strong>. Her favorite color is <span class="hi8">red</span>.</p>
+</div>
+
+<div class="ex">
+  <div class="ex-hd"><div class="ex-letter" style="background:var(--u8)">A</div><h4>Answer the questions about Alex and Mia.</h4><span class="ex-pts">5 pts</span></div>
+  <div class="ex-body">
+    <div class="fl" style="flex-wrap:wrap"><div class="fn fn8">1</div> What color are Alex's eyes? → <input class="b lg b8" data-a="blue" data-ex="6a" placeholder="..."></div>
+    <div class="fl" style="flex-wrap:wrap"><div class="fn fn8">2</div> Is Alex's hair curly or straight? → <input class="b lg b8" data-a="straight" data-ex="6a" placeholder="..."></div>
+    <div class="fl" style="flex-wrap:wrap"><div class="fn fn8">3</div> What does Alex always wear? → a blue <input class="b lg b8" data-a="jacket" data-ex="6a" placeholder="..."> and black <input class="b lg b8" data-a="pants" data-ex="6a" placeholder="..."></div>
+    <div class="fl" style="flex-wrap:wrap"><div class="fn fn8">4</div> What color is Mia's hair? → <input class="b sm b8" data-a="dark" data-ex="6a" placeholder="..."></div>
+    <div class="fl" style="flex-wrap:wrap"><div class="fn fn8">5</div> What does Mia always wear? → a <input class="b sm b8" data-a="dress" data-ex="6a" placeholder="..."> or a <input class="b sm b8" data-a="skirt" data-ex="6a" placeholder="..."></div>
+    <button class="chk c8" onclick="chkEx(this,'6a')">✅ Check</button><div class="fb" id="6a-fb"></div>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-hd"><div class="ex-letter" style="background:var(--u8)">B</div><h4>Write 5–6 sentences describing a person you know (friend, family, or yourself).</h4><span class="ex-pts">5 pts</span></div>
+  <div class="ex-body">
+    <div style="background:var(--u8l);border:1.5px dashed var(--u8);border-radius:9px;padding:12px 15px;margin-bottom:13px;font-size:12px;font-weight:700;color:var(--u8d);line-height:2.1;">
+      💡 <strong>Checklist (1 pt per structure):</strong><br>
+      ☐ &nbsp;Say if they are tall or short<br>
+      ☐ &nbsp;Describe their eyes (color)<br>
+      ☐ &nbsp;Describe their hair (color + style: long/short/curly/straight)<br>
+      ☐ &nbsp;Name 2 clothes they wear<br>
+      ☐ &nbsp;Use a Wh- question about them (e.g. "What does she like?")
+    </div>
+    <textarea id="writing-6b" rows="7" placeholder="My friend is tall. She has brown eyes and long, curly hair. She always wears a jacket and jeans. What does she like? She loves music!"></textarea>
+    <p class="note-teacher">👩‍🏫 Teacher: award 1 pt per correct structure (checklist). Max 5 pts.</p>
+  </div>
+</div>
+
+<!-- FINAL SCORE -->
+<div class="final">
+  <h3>📊 Your total score</h3>
+  <div class="final-score" id="total-disp2" style="color:#86EFAC;">0</div>
+  <div class="final-out">out of 80 points (auto-graded sections)</div>
+  <div class="grade-row">
+    <span class="gchip" data-min="72" data-max="80">72–80 · Excellent ⭐⭐⭐</span>
+    <span class="gchip" data-min="56" data-max="71">56–71 · Very Good ⭐⭐</span>
+    <span class="gchip" data-min="40" data-max="55">40–55 · Good ⭐</span>
+    <span class="gchip" data-min="24" data-max="39">24–39 · Keep practicing 💪</span>
+    <span class="gchip" data-min="0" data-max="23">0–23 · Review needed 📖</span>
+  </div>
+</div>
+
+<div class="submit-wrap">
+  <h3>📤 Send exam to teacher</h3>
+  <p>Make sure you've written your full name before sending!</p>
+  <button class="submit-btn" id="submit-btn" onclick="submitExam()">✉️ Send my exam</button>
+  <div class="submit-status" id="submit-status"></div>
+</div>
+
+</div><!-- end .page -->
+
+<script>
+// ══════════════════════════════════════════
+//  ▶ PEGA AQUÍ TU URL DE APPS SCRIPT
+// ══════════════════════════════════════════
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyZAds1zDzbrhJO70OKPWU1-a9V2W-JQaA4q23I6ziwrsnlonZGOAbcDKHWkTSl3wZ-bg/exec';
+// ══════════════════════════════════════════
+
+const STORAGE_KEY='exam_u78_suspended', WARN_KEY='exam_u78_warnings', MAX_WARNINGS=1;
+let examLocked=false, titleInterval=null, originalTitle=document.title;
+
+window.addEventListener('DOMContentLoaded',function(){
+  const saved=localStorage.getItem(STORAGE_KEY);
+  if(saved) showSuspendedScreen(JSON.parse(saved));
+});
+document.addEventListener('visibilitychange',()=>{ if(document.hidden&&!examLocked) handleViolation(); });
+window.addEventListener('blur',()=>{ if(!examLocked) handleViolation(); });
+
+function handleViolation(){
+  if(examLocked) return;
+  let w=parseInt(localStorage.getItem(WARN_KEY)||'0')+1;
+  localStorage.setItem(WARN_KEY,w);
+  if(w>MAX_WARNINGS){ triggerSuspension(); }
+  else { flashTitle('⚠️ ¡ADVERTENCIA!'); document.getElementById('warn-count-badge').textContent='Advertencia '+w+' de '+MAX_WARNINGS; document.getElementById('warn-modal').classList.add('show'); }
+}
+function closeWarning(){ document.getElementById('warn-modal').classList.remove('show'); stopTitleFlash(); document.title=originalTitle; }
+function triggerSuspension(){
+  examLocked=true;
+  const name=document.getElementById('student-name')?.value?.trim()||'(sin nombre)';
+  const cls=document.getElementById('student-class')?.value?.trim()||'(sin clase)';
+  const now=new Date().toLocaleString('es-BO',{dateStyle:'short',timeStyle:'medium'});
+  const info={name,class:cls,time:now};
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(info)); localStorage.removeItem(WARN_KEY);
+  showSuspendedScreen(info);
+}
+function showSuspendedScreen(info){
+  examLocked=true;
+  document.querySelectorAll('input,textarea,button,.mc-opt,.tf-b,.mi,.rchip').forEach(el=>{ el.disabled=true; el.style.pointerEvents='none'; });
+  document.getElementById('sus-name').textContent=info.name||'—';
+  document.getElementById('sus-class').textContent=info.class||'—';
+  document.getElementById('sus-time').textContent=info.time||'—';
+  document.getElementById('suspended-screen').classList.add('show');
+  document.body.style.overflow='hidden';
+  stopTitleFlash(); flashTitle('🚫 EXAMEN SUSPENDIDO');
+}
+function flashTitle(msg){ stopTitleFlash(); let t=false; titleInterval=setInterval(()=>{ document.title=t?msg:originalTitle; t=!t; },900); }
+function stopTitleFlash(){ if(titleInterval){ clearInterval(titleInterval); titleInterval=null; } }
+
+// SCORING
+let total=0; const MAX=80; const secScore={1:0,2:0,3:0,4:0,5:0,6:0};
+function upd(n,sec){
+  total+=n; total=Math.max(0,total);
+  if(sec) secScore[sec]=(secScore[sec]||0)+n;
+  const pct=Math.min(100,Math.round(total/MAX*100));
+  document.getElementById('prog').style.width=pct+'%';
+  document.getElementById('pts-disp').textContent=total+' / '+MAX;
+  document.getElementById('total-disp').textContent=total;
+  document.getElementById('total-disp2').textContent=total;
+  document.querySelectorAll('.gchip').forEach(c=>{ c.classList.toggle('on',total>=+c.dataset.min&&total<=+c.dataset.max); });
+}
+
+function chkEx(btn,id){
+  const body=btn.closest('.ex-body');
+  const inputs=body.querySelectorAll('input[data-a]');
+  let ok=0; const sec=parseInt(id.charAt(0))||0;
+  inputs.forEach(inp=>{
+    const ans=(inp.dataset.a||'').toLowerCase().trim();
+    const val=inp.value.toLowerCase().trim();
+    const correct=val===ans||ans.split('/').map(s=>s.trim()).includes(val);
+    inp.classList.toggle('ok',correct&&val!=='');
+    inp.classList.toggle('no',!correct&&val!=='');
+    if(correct) ok++;
+  });
+  const tot=inputs.length;
+  const fb=document.getElementById(id+'-fb'); fb.classList.add('show');
+  if(ok===tot&&tot>0){ fb.className='fb show good'; fb.textContent='🎉 Perfect! '+ok+'/'+tot; }
+  else { fb.className='fb show bad'; fb.textContent='💪 '+ok+'/'+tot+' correct — check the red ones!'; }
+  upd(ok,sec); btn.disabled=true;
+}
+
+function cho(btn,isOk,sec){
+  const g=btn.closest('.mc-opts');
+  g.querySelectorAll('.mc-opt').forEach(b=>{ b.classList.remove('ok','no','rev'); b.disabled=false; });
+  if(isOk){ btn.classList.add('ok'); }
+  else { btn.classList.add('no'); g.querySelectorAll('.mc-opt').forEach(b=>{ if(b!==btn) b.classList.add('rev'); }); }
+  g.querySelectorAll('.mc-opt').forEach(b=>b.disabled=true);
+  if(isOk) upd(1,parseInt(sec)||0);
+}
+
+function doTF(btn,chosen,correct,rowId){
+  const row=document.getElementById(rowId);
+  row.querySelectorAll('.tf-b').forEach(b=>{ b.classList.remove('sel'); b.disabled=true; });
+  btn.classList.add('sel');
+  const icon=row.querySelector('.tf-icon');
+  if(chosen===correct){ row.classList.add('ok'); icon.textContent='✅'; upd(1,3); }
+  else { row.classList.add('no'); icon.textContent='❌'; }
+}
+
+// MATCHING — two independent sets
+let selL=null, selR=null;
+const matchMap={hL1:'hR1',hL2:'hR2',hL3:'hR3',hL4:'hR4',hL5:'hR5',hL6:'hR6'};
+function matchGame(el,id){
+  if(el.classList.contains('matched')) return;
+  const isL=id.includes('L');
+  if(isL){ if(selL) selL.classList.remove('selL'); selL=el; el.classList.add('selL'); }
+  else { if(selR) selR.classList.remove('selR'); selR=el; el.classList.add('selR'); }
+  if(selL&&selR){
+    const lId=selL.dataset.id, rId=selR.dataset.id;
+    if(matchMap[lId]===rId){
+      selL.classList.remove('selL'); selL.classList.add('matched');
+      selR.classList.remove('selR'); selR.classList.add('matched');
+      upd(1,1); selL=null; selR=null;
+    } else {
+      selL.classList.add('wrong'); selR.classList.add('wrong');
+      const l=selL,r=selR;
+      setTimeout(()=>{ l.classList.remove('selL','wrong'); r.classList.remove('selR','wrong'); },900);
+      selL=null; selR=null;
+    }
+  }
+}
+
+function collectAnswers(){
+  const a={};
+  function fillVals(ex){ return[...document.querySelectorAll(`input[data-ex="${ex}"]`)].map(i=>i.value||'_').join(' / '); }
+  function getMC(sel){ return[...document.querySelectorAll(sel)].map((mc,i)=>{ const q=mc.querySelector('.mc-q')?.textContent?.substring(0,40)||('Q'+(i+1)); const s=mc.querySelector('.mc-opt.ok,.mc-opt.no'); return q+' → '+(s?s.textContent.trim().substring(0,25)+(s.classList.contains('ok')?' ✅':' ❌'):'(sin resp.)'); }).join(' | '); }
+  a['1a_match']=[...document.querySelectorAll('.mi.matched')].map(m=>m.textContent.trim()).join(' | ')||'(sin completar)';
+  a['1b_food']=fillVals('1b');
+  a['1c_mc']=getMC('.mc[data-sec="1c"]');
+  a['2a_adverbs']=fillVals('2a');
+  a['2b_dodoes']=fillVals('2b');
+  a['3a_tf']=['tf1','tf2','tf3','tf4'].map(id=>{ const row=document.getElementById(id); const q=row?.querySelector('.tf-q')?.textContent?.substring(0,35)||id; const s=row?.querySelector('.tf-b.sel'); const ic=row?.querySelector('.tf-icon')?.textContent||''; return q.trim()+' → '+(s?s.textContent:'?')+ic; }).join(' | ');
+  a['3b_fill']=fillVals('3b');
+  a['4a_clothes']=fillVals('4a');
+  a['4b_descriptions']=getMC('.mc[data-sec="4b"]');
+  a['5a_whquestions']=fillVals('5a');
+  a['5b_pronouns']=fillVals('5b');
+  a['5c_mc']=getMC('.mc[data-sec="5c"]');
+  a['6a_reading']=fillVals('6a');
+  a['6b_writing']=document.getElementById('writing-6b')?.value||'';
+  return a;
+}
+
+function submitExam(){
+  const name=document.getElementById('student-name').value.trim();
+  const date=document.getElementById('student-date').value.trim();
+  const cls=document.getElementById('student-class').value.trim();
+  const statusEl=document.getElementById('submit-status');
+  const btn=document.getElementById('submit-btn');
+  if(!name){ alert('⚠️ Escribe tu nombre completo antes de enviar.'); document.getElementById('student-name').focus(); return; }
+  if(!APPS_SCRIPT_URL||APPS_SCRIPT_URL==='PEGAR_URL_AQUI'){
+    statusEl.className='submit-status error'; statusEl.style.display='block';
+    statusEl.textContent='⚙️ El profesor aún no configuró la URL. Avísale.'; return;
+  }
+  btn.disabled=true; btn.textContent='⏳ Enviando...';
+  statusEl.className='submit-status sending'; statusEl.style.display='block'; statusEl.textContent='📡 Enviando tu examen...';
+  const payload={name,date,class:cls,exam:'units7-8',total,
+    sec1:secScore[1]||0,sec2:secScore[2]||0,sec3:secScore[3]||0,
+    sec4:secScore[4]||0,sec5:secScore[5]||0,sec6:secScore[6]||0,
+    answers:collectAnswers()};
+  fetch(APPS_SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+    .then(()=>{ statusEl.className='submit-status sent'; statusEl.textContent='🎉 ¡Examen enviado! Bien hecho, '+name+' 👏'; btn.textContent='✅ Enviado'; })
+    .catch(err=>{ btn.disabled=false; btn.textContent='✉️ Send my exam'; statusEl.className='submit-status error'; statusEl.textContent='❌ Error al enviar. Verifica tu conexión.'; console.error(err); });
+}
+</script>
+</body>
+</html>
